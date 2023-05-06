@@ -1,20 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package igu;
 
 import logica.EstacionaTec;
+import logica.Guardia;
 
 /**
  *
- * @author danie
+ * @author daniel
  */
+
 public class InicioSesion extends javax.swing.JFrame {
 
-    /**
-     * Creates new form InicioSesion
-     */
+    ///////////////////////////////////////////////////////////////////////////
+    //////////////////////////// OBEJTOS //////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
+    
+    Guardia guardia1 = new Guardia("Daniel","Gutierrez","Ramirez",19,08,20004,"DaniSa19","190824","al22760562@ite.edu.mx");
+    
     public InicioSesion() {
         initComponents();
     }
