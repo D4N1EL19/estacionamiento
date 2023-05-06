@@ -14,7 +14,7 @@ public class InicioSesion extends javax.swing.JFrame {
     //////////////////////////// OBEJTOS //////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
     
-    Guardia guardia1 = new Guardia("Daniel","Gutierrez","Ramirez",19,08,20004,"DaniSa19","190824","al22760562@ite.edu.mx");
+    Guardia guardia1 = new Guardia("Daniel","Gutierrez","Ramirez",19,8,20004,"DaniSa19","190824","al22760562@ite.edu.mx",0);
     
     public InicioSesion() {
         initComponents();
