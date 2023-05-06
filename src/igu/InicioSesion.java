@@ -1,6 +1,5 @@
 package igu;
 
-import logica.EstacionaTec;
 import logica.Guardia;
 
 /**
@@ -135,8 +134,9 @@ public class InicioSesion extends javax.swing.JFrame {
         String usuario = txtUsuario.getText();
         String contrasenia = txtContrasenia.getText();
         
-        EstacionaTec.setUsuario(usuario);
-        EstacionaTec.setContrasenia(contrasenia);
+        if((usuario.equals(guardia1.getUsuario())) && (contrasenia.equals(guardia1.getContrasenia()))){
+            System.out.println("Hola mundo");
+        }
         
         txtContrasenia.setText("");
         txtUsuario.setText("");

@@ -1,6 +1,7 @@
 package logica;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
@@ -67,7 +68,9 @@ public abstract class Persona {
         
         calendario.set(anio, mes, dia);
         
-        return sdf.format(calendario);
+        Date fecha = calendario.getGregorianChange();
+        
+        return sdf.format(fecha);
     }
     
     //generarConstrasenia
