@@ -13,7 +13,7 @@ public class InicioSesion extends javax.swing.JFrame {
     //////////////////////////// OBEJTOS //////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
     
-    Guardia guardia1 = new Guardia("Daniel","Gutierrez","Ramirez",19,8,20004,"DaniSa19","190824","al22760562@ite.edu.mx",0);
+    Guardia guardia1 = new Guardia("Daniel","Gutierrez","Ramirez",19,8,20004,"DaniSa19","190804","al22760562@ite.edu.mx",0);
     Guardia guardia2 = new Guardia("Saul","Martinez","Monge",19,2,20004,"saulikeapro","190204","al22760566@ite.edu.mx",1);
     
     public InicioSesion() {
@@ -38,7 +38,6 @@ public class InicioSesion extends javax.swing.JFrame {
         btnEntrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(500, 500));
 
         pnlPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         pnlPrincipal.setPreferredSize(new java.awt.Dimension(500, 500));
