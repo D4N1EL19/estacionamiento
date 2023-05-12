@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -23,12 +23,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pnlPrincipal" alignment="0" max="32767" attributes="0"/>
+          <Component id="pnlPrincipal" alignment="0" pref="1481" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pnlPrincipal" alignment="0" max="32767" attributes="0"/>
+          <Component id="pnlPrincipal" alignment="0" pref="935" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -48,44 +48,44 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
-                          <Component id="lblLogo" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="lblContrase" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtUsuario" pref="246" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="604" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jpdContrasenia" alignment="0" min="-2" pref="246" max="-2" attributes="0"/>
+                              <Component id="lblContrase" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtUsuario" alignment="0" min="-2" pref="246" max="-2" attributes="0"/>
                               <Component id="lblUsuario" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jpdContrasenia" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="199" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="662" max="-2" attributes="0"/>
                           <Component id="btnEntrar" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="625" max="-2" attributes="0"/>
+                          <Component id="lblLogo" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="128" max="32767" attributes="0"/>
+                  <EmptySpace pref="631" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
                   <Component id="lblLogo" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Component id="lblUsuario" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="txtUsuario" min="-2" pref="32" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Component id="lblContrase" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jpdContrasenia" min="-2" pref="37" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   <Component id="btnEntrar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="74" max="32767" attributes="0"/>
+                  <EmptySpace pref="275" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -94,7 +94,7 @@
         <Component class="javax.swing.JLabel" name="lblLogo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/persistencia/logo.png"/>
+              <Image iconType="3" name="/persistencia/346339429_9552708478103337_4631547997174124060_n.gif"/>
             </Property>
           </Properties>
         </Component>
@@ -121,6 +121,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnEntrar">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Iniciar sesion"/>
           </Properties>
           <Events>
