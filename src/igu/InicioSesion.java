@@ -1,8 +1,6 @@
 package igu;
 
-import java.util.ArrayList;
-import logica.Administrativo;
-import logica.Guardia;
+import logica.EstacionaTec;
 
 /**
  *
@@ -10,69 +8,13 @@ import logica.Guardia;
  */
 
 public class InicioSesion extends javax.swing.JFrame {
-
-    ///////////////////////////////////////////////////////////////////////////
-    //////////////////////////// OBEJTOS //////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////
     
-    ArrayList<Guardia> guardias = new ArrayList<>();
-    ArrayList<Administrativo> administrativos = new ArrayList<>();
-    
+    EstacionaTec metodos = new EstacionaTec();
     
     public InicioSesion() {
         initComponents();
     }
-    
-    ///////////////////////////////////////////////////////////////////////////
-    //////////////////////////// METODOS //////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////
-    
-    //Verifica si la contraseña y asuario que ingresaron es un guardia
-    public boolean encontrarGurdia(String usuario, String contrasenia){
-        boolean guardia = false, usua = false, contra = false;
-        
-        for(int i=0; i<guardias.size(); i++){
-            
-            if(contrasenia.compareTo(guardias.get(i).getContrasenia()) == 0){
-                contra = true;
-            }
-            
-            if(usuario.compareTo(guardias.get(i).getUsuario()) == 0){
-                usua = true;
-            }
-            
-            if(contra && usua){
-                guardia = true;
-                break;
-            }
-        }
-        
-        return guardia;
-    }
-    
-    //Verifica si la contraseña y asuario que ingresaron es un administrativo
-    public boolean encontrarAdministrativo(String usuario, String contrasenia){
-        boolean admi = false, usua = false, contra = false;
-        
-        for(int i=0; i<administrativos.size(); i++){
-            
-            if(contrasenia.compareTo(administrativos.get(i).getContrasenia()) == 0){
-                contra = true;
-            }
-            
-            if(usuario.compareTo(administrativos.get(i).getUsuario()) == 0){
-                usua = true;
-            }
-            
-            if(contra && usua){
-                admi = true;
-                break;
-            }
-        }
-        
-        return admi;
-    }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -171,25 +113,20 @@ public class InicioSesion extends javax.swing.JFrame {
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
 
-        guardias.add(new Guardia("Daniel","Gutierrez","Ramirez",19,8,20004,"DaniSa19","190804","al22760562@ite.edu.mx",0));
-        guardias.add(new Guardia("Saul","Martinez","Monge",19,2,20004,"saulikeapro","190204","al22760566@ite.edu.mx",1));
-
-        String usuario = txtUsuario.getText(), contra = null;
-        char contrasenia[] = jpdContrasenia.getPassword();
+        String usuario = txtUsuario.getText(), contrasenia = "";
+        char[] contra = jpdContrasenia.getPassword();
         boolean guardia = false, administrativo = false;
 
-        contra = contra.valueOf(contrasenia);
+        contrasenia = String.valueOf(contra);
 
-        guardia = encontrarGurdia(usuario, contra);
-        administrativo = encontrarAdministrativo(usuario, contra);
+        guardia = metodos.encontrarGurdia(usuario, contrasenia);
+        administrativo = metodos.encontrarAdministrativo(usuario, contrasenia);
 
         if(guardia){
-            //mandamos a llamar la interfaz de guardia
             System.out.println("Es guardia");
         }
 
         if(administrativo){
-            //mandamos a llamar la interfaz de administrativo
             System.out.println("Es administrativo");
         }
 
