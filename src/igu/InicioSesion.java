@@ -116,11 +116,11 @@ public class InicioSesion extends javax.swing.JFrame {
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
 
-        String usuario = txtUsuario.getText(), contrasenia = "";
+        String usuario = txtUsuario.getText();
         char[] contra = jpdContrasenia.getPassword();
+        String contrasenia = String.valueOf(contra);
         boolean guardia = false, administrativo = false;
 
-        contrasenia = String.valueOf(contra);
 
         guardia = metodos.encontrarGurdia(usuario, contrasenia);
         administrativo = metodos.encontrarAdministrativo(usuario, contrasenia);
