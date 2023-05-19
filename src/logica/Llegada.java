@@ -52,4 +52,12 @@ public final class Llegada {
         
         return sdf.format(calendario.getTime());
     }
+    
+    //metodo para crear fecha falsa
+    public Calendar fecha(){
+        
+        
+        
+        return calendario;
+    }
 }

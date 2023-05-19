@@ -32,7 +32,6 @@ public class EstacionaTec {
         //hacemos visible la primera interfaz
         pantallaInicio.setVisible(true);
         pantallaInicio.setLocationRelativeTo(null);
-
     }
     
     //Verifica si la contraseña y asuario que ingresaron es un guardia

@@ -10,6 +10,7 @@ import logica.EstacionaTec;
 public class InicioSesion extends javax.swing.JFrame {
     
     EstacionaTec metodos = new EstacionaTec();
+    Guardia pantallaGuardia = new Guardia();
     
     public InicioSesion() {
         initComponents();
@@ -127,6 +128,9 @@ public class InicioSesion extends javax.swing.JFrame {
 
         if(guardia){
             System.out.println("Es guardia");
+            pantallaGuardia.setVisible(true);
+            pantallaGuardia.setLocationRelativeTo(null);
+            this.dispose();
         }
 
         if(administrativo){
