@@ -13,7 +13,6 @@ public class EstacionaTec {
     //////////////////////////// OBEJTOS //////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
     
-    static EstacionaTec metodos = new EstacionaTec();
     static ArrayList<Guardia> guardias = new ArrayList<>();
     ArrayList<Administrativo> administrativos = new ArrayList<>();
     static InicioSesion pantallaInicio = new InicioSesion();
