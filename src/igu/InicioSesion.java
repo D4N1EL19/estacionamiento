@@ -32,22 +32,34 @@ public class InicioSesion extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlPrincipal = new javax.swing.JPanel();
+        lblX = new javax.swing.JLabel();
         pnlInicioSesion = new javax.swing.JPanel();
         lblLogo = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         lblContrase = new javax.swing.JLabel();
         jpdContrasenia = new javax.swing.JPasswordField();
-        btnEntrar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
+        lblIngresar = new javax.swing.JLabel();
+        lblImagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         pnlPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         pnlPrincipal.setPreferredSize(new java.awt.Dimension(500, 500));
         pnlPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblX.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        lblX.setForeground(new java.awt.Color(255, 255, 255));
+        lblX.setText("X");
+        lblX.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblXMousePressed(evt);
+            }
+        });
+        pnlPrincipal.add(lblX, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 730, 20, 20));
 
         pnlInicioSesion.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -87,33 +99,30 @@ public class InicioSesion extends javax.swing.JFrame {
             }
         });
 
-        btnEntrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnEntrar.setText("Iniciar sesion");
-        btnEntrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEntrarActionPerformed(evt);
-            }
-        });
-
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setToolTipText("");
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator2.setToolTipText("");
 
+        lblIngresar.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        lblIngresar.setText("Ingresar");
+        lblIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblIngresarMousePressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlInicioSesionLayout = new javax.swing.GroupLayout(pnlInicioSesion);
         pnlInicioSesion.setLayout(pnlInicioSesionLayout);
         pnlInicioSesionLayout.setHorizontalGroup(
             pnlInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInicioSesionLayout.createSequentialGroup()
-                .addGroup(pnlInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pnlInicioSesionLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnEntrar))
-                    .addGroup(pnlInicioSesionLayout.createSequentialGroup()
-                        .addGap(149, 149, 149)
+                .addContainerGap(65, Short.MAX_VALUE)
+                .addGroup(pnlInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInicioSesionLayout.createSequentialGroup()
                         .addComponent(lblLogo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                        .addGap(62, 62, 62)
                         .addGroup(pnlInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblContrase)
                             .addComponent(jpdContrasenia, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
@@ -121,19 +130,18 @@ public class InicioSesion extends javax.swing.JFrame {
                             .addComponent(lblUsuario)
                             .addComponent(jSeparator1)
                             .addComponent(jSeparator2))
-                        .addGap(109, 109, 109)))
-                .addGap(38, 38, 38))
+                        .addGap(147, 147, 147))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInicioSesionLayout.createSequentialGroup()
+                        .addComponent(lblIngresar)
+                        .addGap(53, 53, 53))))
         );
         pnlInicioSesionLayout.setVerticalGroup(
             pnlInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInicioSesionLayout.createSequentialGroup()
                 .addGap(134, 134, 134)
                 .addComponent(lblUsuario)
-                .addGap(14, 14, 14)
+                .addGap(10, 10, 10)
                 .addGroup(pnlInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pnlInicioSesionLayout.createSequentialGroup()
-                        .addComponent(lblLogo)
-                        .addGap(57, 57, 57))
                     .addGroup(pnlInicioSesionLayout.createSequentialGroup()
                         .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -143,71 +151,36 @@ public class InicioSesion extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jpdContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(91, 91, 91)))
-                .addComponent(btnEntrar)
-                .addContainerGap(29, Short.MAX_VALUE))
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblLogo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addComponent(lblIngresar)
+                .addGap(33, 33, 33))
         );
 
-        pnlPrincipal.add(pnlInicioSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 860, 520));
+        pnlPrincipal.add(pnlInicioSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 720, 520));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/persistencia/20230601_122857.jpg"))); // NOI18N
-        pnlPrincipal.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -230, 1500, 1190));
+        lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/persistencia/20230601_122857.jpg"))); // NOI18N
+        pnlPrincipal.add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(-140, -70, 1320, 820));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 1500, Short.MAX_VALUE)
+            .addComponent(pnlPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 1180, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 960, Short.MAX_VALUE)
+            .addComponent(pnlPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioActionPerformed
-
-    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        String usuario = txtUsuario.getText();
-        char[] contra = jpdContrasenia.getPassword();
-        String contrasenia = String.valueOf(contra);
-        boolean guardia = false, administrativo = false;
-        boolean vacioU = usuario.compareTo("") != 0 && usuario.compareTo("Nombre de usuario") != 0;
-        boolean vacioC = contrasenia.compareTo("") != 0 && contrasenia.compareTo("defecto") != 0;
-        
-        if(vacioU && vacioC){
-            guardia = metodos.encontrarGurdia(usuario, contrasenia);
-            administrativo = metodos.encontrarAdministrativo(usuario, contrasenia);
-            if(guardia){
-                System.out.println("Es guardia");
-                pantallaGuardia.setVisible(true);
-                pantallaGuardia.setLocationRelativeTo(null);
-                this.dispose();
-            }
-            else if(administrativo){
-                System.out.println("Es administrativo");
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "Usuario Invalido");
-                limpiar();
-            }
-        }
-        else if(!vacioU && !vacioC){
-            JOptionPane.showMessageDialog(null, "Ingresa los campos");
-        }
-        else if(!vacioC){
-            JOptionPane.showMessageDialog(null, "Ingresa una contaseña");
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Ingresa un usuario");
-        }
-        
-    }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void jpdContraseniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpdContraseniaActionPerformed
         // TODO add your handling code here:
@@ -249,15 +222,58 @@ public class InicioSesion extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jpdContraseniaMousePressed
 
+    private void lblIngresarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblIngresarMousePressed
+        // TODO add your handling code here:
+        String usuario = txtUsuario.getText();
+        char[] contra = jpdContrasenia.getPassword();
+        String contrasenia = String.valueOf(contra);
+        boolean guardia = false, administrativo = false;
+        boolean vacioU = usuario.compareTo("") != 0 && usuario.compareTo("Nombre de usuario") != 0;
+        boolean vacioC = contrasenia.compareTo("") != 0 && contrasenia.compareTo("defecto") != 0;
+        
+        if(vacioU && vacioC){
+            guardia = metodos.encontrarGurdia(usuario, contrasenia);
+            administrativo = metodos.encontrarAdministrativo(usuario, contrasenia);
+            if(guardia){
+                System.out.println("Es guardia");
+                pantallaGuardia.setVisible(true);
+                pantallaGuardia.setLocationRelativeTo(null);
+                this.dispose();
+            }
+            else if(administrativo){
+                System.out.println("Es administrativo");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Usuario Invalido");
+                limpiar();
+            }
+        }
+        else if(!vacioU && !vacioC){
+            JOptionPane.showMessageDialog(null, "Ingresa los campos");
+        }
+        else if(!vacioC){
+            JOptionPane.showMessageDialog(null, "Ingresa una contaseña");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Ingresa un usuario");
+        }
+    }//GEN-LAST:event_lblIngresarMousePressed
+
+    private void lblXMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXMousePressed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_lblXMousePressed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnEntrar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPasswordField jpdContrasenia;
     private javax.swing.JLabel lblContrase;
+    private javax.swing.JLabel lblImagen;
+    private javax.swing.JLabel lblIngresar;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblUsuario;
+    private javax.swing.JLabel lblX;
     private javax.swing.JPanel pnlInicioSesion;
     private javax.swing.JPanel pnlPrincipal;
     private javax.swing.JTextField txtUsuario;
