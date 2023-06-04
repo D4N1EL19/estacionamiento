@@ -107,6 +107,7 @@ public class InicioSesion extends javax.swing.JFrame {
 
         lblIngresar.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         lblIngresar.setText("Ingresar");
+        lblIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblIngresarMousePressed(evt);
