@@ -1,27 +1,18 @@
 package logica;
 
-/**
- * @author daniel
- */
-
 public class Estudiante extends Persona{
     
-    ////////////////////////////////////////////////////////////////////////////
-    //////////////////////// ATRIBUTOS DE LA CLASE /////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////
-    
-    public int numeroArreglo = 0, numeroControl = 0, semestre = 0, numeroVehiulo = 0;
+ 
+    public int numeroArreglo = 0, semestre = 0, numeroVehiulo = 0;
     public String carrera = "";
+    long numeroControl = 0;
     
-    ////////////////////////////////////////////////////////////////////////////
-    //////////////////////// METODOS CONSTRUCTORES /////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////
-
+    
     public Estudiante() {
         //vacio
     }
 
-    public Estudiante(String n, int numA, int numC, int numV, int sem, String carrera) {
+    public Estudiante(String n, int numA, long numC, int numV, int sem, String carrera) {
         super(n);
         this.carrera = carrera;
         this.numeroArreglo = numA;
@@ -33,6 +24,7 @@ public class Estudiante extends Persona{
     ////////////////////////////////////////////////////////////////////////////
     //////////////////////// METODOS PARTICULARES //////////////////////////////
     ////////////////////////////////////////////////////////////////////////////
+    
     //Metodos abstractos
     @Override
     public void asignarCategoria() {

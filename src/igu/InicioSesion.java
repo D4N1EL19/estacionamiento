@@ -2,21 +2,21 @@ package igu;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
-import logica.EstacionaTec;
-
-/**
- *
- * @author daniel
- */
+import logica.ControlCuestionarios;
+import logica.ControlPersonas;
+import logica.BaseDeDatos;
 
 public class InicioSesion extends javax.swing.JFrame {
     
-    EstacionaTec metodos = new EstacionaTec();
-    Guardia pantallaGuardia = new Guardia();
-    public final Color defecto = new Color(204,204,204);
+    //objetos de la clase
+    ControlPersonas control;
+    BaseDeDatos bd;
     
-    public InicioSesion() {
+    //constructor
+    public InicioSesion(BaseDeDatos bd) {
         initComponents();
+        this.bd = bd;
+        this.control = new ControlPersonas(bd);
     }
     
     //metodo para limpiar campos
@@ -54,12 +54,13 @@ public class InicioSesion extends javax.swing.JFrame {
         lblX.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         lblX.setForeground(new java.awt.Color(255, 255, 255));
         lblX.setText("X");
+        lblX.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblX.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblXMousePressed(evt);
             }
         });
-        pnlPrincipal.add(lblX, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 730, 20, 20));
+        pnlPrincipal.add(lblX, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 20, 20));
 
         pnlInicioSesion.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -180,16 +181,16 @@ public class InicioSesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
-        // TODO add your handling code here:
+        //no lo necesitamos
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
     private void jpdContraseniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpdContraseniaActionPerformed
-        // TODO add your handling code here:
+        //no lo necesitamos
     }//GEN-LAST:event_jpdContraseniaActionPerformed
 
     private void txtUsuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUsuarioMousePressed
-        String campoUsuario  = txtUsuario.getText();
-        String campoContrasenia = String.valueOf(jpdContrasenia.getPassword());
+        campoUsuario  = txtUsuario.getText();
+        campoContrasenia = String.valueOf(jpdContrasenia.getPassword());
         
         boolean vacio = campoContrasenia.compareTo("") == 0;
         boolean defectoT = campoUsuario.compareTo("Nombre de usuario") == 0;
@@ -201,13 +202,13 @@ public class InicioSesion extends javax.swing.JFrame {
         
         if(vacio){
             jpdContrasenia.setForeground(this.defecto);
-            jpdContrasenia.setText("defecto");
+            jpdContrasenia.setText(consC);
         }
     }//GEN-LAST:event_txtUsuarioMousePressed
 
     private void jpdContraseniaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpdContraseniaMousePressed
-        String campoUsuario  = txtUsuario.getText();
-        String campoContrasenia = String.valueOf(jpdContrasenia.getPassword());
+        campoUsuario  = txtUsuario.getText();
+        campoContrasenia = String.valueOf(jpdContrasenia.getPassword());
         
         boolean vacio = campoUsuario.compareTo("") == 0;
         boolean defectoT = campoContrasenia.compareTo("defecto") == 0;
@@ -219,52 +220,55 @@ public class InicioSesion extends javax.swing.JFrame {
         
         if(vacio){
             txtUsuario.setForeground(this.defecto);
-            txtUsuario.setText("Nombre de usuario");
+            txtUsuario.setText(consU);
         }
     }//GEN-LAST:event_jpdContraseniaMousePressed
 
     private void lblIngresarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblIngresarMousePressed
-        // TODO add your handling code here:
-        String usuario = txtUsuario.getText();
-        char[] contra = jpdContrasenia.getPassword();
-        String contrasenia = String.valueOf(contra);
-        boolean guardia = false, administrativo = false;
-        boolean vacioU = usuario.compareTo("") != 0 && usuario.compareTo("Nombre de usuario") != 0;
-        boolean vacioC = contrasenia.compareTo("") != 0 && contrasenia.compareTo("defecto") != 0;
+        campoUsuario = txtUsuario.getText();
+        campoContrasenia = String.valueOf(jpdContrasenia.getPassword());
+
+        boolean vacios = ControlCuestionarios.cuestionarioInisioSesion(campoUsuario,campoContrasenia,consU,consC);
         
-        if(vacioU && vacioC){
-            guardia = metodos.encontrarGurdia(usuario, contrasenia);
-            administrativo = metodos.encontrarAdministrativo(usuario, contrasenia);
-            if(guardia){
-                System.out.println("Es guardia");
-                pantallaGuardia.setVisible(true);
-                pantallaGuardia.setLocationRelativeTo(null);
-                this.dispose();
+        if(vacios){
+            switch (control.encontrarEmpleado(campoUsuario, campoContrasenia)){
+                case 'G':
+                    Guardia pantallaGuardia = new Guardia(bd);
+                    pantallaGuardia.setVisible(true);
+                    pantallaGuardia.setLocationRelativeTo(null);
+                    this.dispose();;
+                    break;
+                case 'A':
+                    //pantalla de administrativo
+                    System.out.println(campoUsuario);
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Correo o contraseña incorrectos");
             }
-            else if(administrativo){
-                System.out.println("Es administrativo");
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "Usuario Invalido");
-                limpiar();
-            }
-        }
-        else if(!vacioU && !vacioC){
-            JOptionPane.showMessageDialog(null, "Ingresa los campos");
-        }
-        else if(!vacioC){
-            JOptionPane.showMessageDialog(null, "Ingresa una contaseña");
         }
         else{
-            JOptionPane.showMessageDialog(null, "Ingresa un usuario");
+            JOptionPane.showMessageDialog(null, "Ingresa los campos");
         }
+        
+        //reinicamos los botones
+        jpdContrasenia.setForeground(this.defecto);
+        jpdContrasenia.setText("");
+        txtUsuario.setForeground(this.defecto);
+        txtUsuario.setText("");
     }//GEN-LAST:event_lblIngresarMousePressed
 
     private void lblXMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXMousePressed
-        // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_lblXMousePressed
-
+    
+    //variables globales
+    String campoUsuario = "";
+    String campoContrasenia = "";
+    
+    //constantes por defecto de los campos
+    public final String consU = "Nombre de usuario";
+    public final String consC = "defecto";
+    public final Color defecto = new Color(204,204,204);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

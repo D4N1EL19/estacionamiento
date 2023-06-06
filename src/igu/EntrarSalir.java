@@ -28,58 +28,168 @@ public class EntrarSalir extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         pnlEstacionamiento1 = new javax.swing.JPanel();
+        lblEst1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         pnlEstacionamiento2 = new javax.swing.JPanel();
+        lblEst2 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
         pnlEstacionamiento3 = new javax.swing.JPanel();
+        lblEst3 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
         pnlEstacionamiento3uno = new javax.swing.JPanel();
         pnlE400 = new javax.swing.JPanel();
+        lbl400 = new javax.swing.JLabel();
         pnlE300 = new javax.swing.JPanel();
+        lbl300 = new javax.swing.JLabel();
         pnlE200 = new javax.swing.JPanel();
+        lbl200 = new javax.swing.JLabel();
         pnlE100 = new javax.swing.JPanel();
+        lbl100 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(180, 210, 255));
         jPanel1.setMinimumSize(new java.awt.Dimension(1180, 750));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblEst1.setFont(new java.awt.Font("Montserrat Thin", 0, 36)); // NOI18N
+        lblEst1.setText("Estacionamiento 1");
+        lblEst1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblEst1MousePressed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Montserrat Thin", 0, 14)); // NOI18N
+        jLabel1.setText("Disponibilidad");
+
+        jTextField1.setEditable(false);
+        jTextField1.setFont(new java.awt.Font("Montserrat Thin", 0, 14)); // NOI18N
+        jTextField1.setBorder(null);
+
         javax.swing.GroupLayout pnlEstacionamiento1Layout = new javax.swing.GroupLayout(pnlEstacionamiento1);
         pnlEstacionamiento1.setLayout(pnlEstacionamiento1Layout);
         pnlEstacionamiento1Layout.setHorizontalGroup(
             pnlEstacionamiento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 270, Short.MAX_VALUE)
+            .addGroup(pnlEstacionamiento1Layout.createSequentialGroup()
+                .addGroup(pnlEstacionamiento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlEstacionamiento1Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(lblEst1))
+                    .addGroup(pnlEstacionamiento1Layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(71, 71, 71)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         pnlEstacionamiento1Layout.setVerticalGroup(
             pnlEstacionamiento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 240, Short.MAX_VALUE)
+            .addGroup(pnlEstacionamiento1Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(lblEst1)
+                .addGap(31, 31, 31)
+                .addGroup(pnlEstacionamiento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
-        jPanel1.add(pnlEstacionamiento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 440, 270, 240));
+        jPanel1.add(pnlEstacionamiento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 440, 370, 240));
+
+        lblEst2.setFont(new java.awt.Font("Montserrat Thin", 0, 36)); // NOI18N
+        lblEst2.setText("Estacionamiento 2");
+        lblEst2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblEst2MousePressed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Montserrat Thin", 0, 14)); // NOI18N
+        jLabel2.setText("Disponibilidad");
+
+        jTextField2.setEditable(false);
+        jTextField2.setFont(new java.awt.Font("Montserrat Thin", 0, 14)); // NOI18N
+        jTextField2.setBorder(null);
 
         javax.swing.GroupLayout pnlEstacionamiento2Layout = new javax.swing.GroupLayout(pnlEstacionamiento2);
         pnlEstacionamiento2.setLayout(pnlEstacionamiento2Layout);
         pnlEstacionamiento2Layout.setHorizontalGroup(
             pnlEstacionamiento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 280, Short.MAX_VALUE)
+            .addGroup(pnlEstacionamiento2Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(pnlEstacionamiento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlEstacionamiento2Layout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblEst2))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         pnlEstacionamiento2Layout.setVerticalGroup(
             pnlEstacionamiento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 230, Short.MAX_VALUE)
+            .addGroup(pnlEstacionamiento2Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(lblEst2)
+                .addGap(30, 30, 30)
+                .addGroup(pnlEstacionamiento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
-        jPanel1.add(pnlEstacionamiento2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 100, 280, 230));
+        jPanel1.add(pnlEstacionamiento2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 160, 380, 230));
+
+        lblEst3.setFont(new java.awt.Font("Montserrat Thin", 0, 36)); // NOI18N
+        lblEst3.setText("Estacionamiento 3");
+        lblEst3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblEst3MousePressed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Montserrat Thin", 0, 14)); // NOI18N
+        jLabel3.setText("Disponibilidad");
+
+        jTextField3.setEditable(false);
+        jTextField3.setFont(new java.awt.Font("Montserrat Thin", 0, 14)); // NOI18N
+        jTextField3.setBorder(null);
 
         javax.swing.GroupLayout pnlEstacionamiento3Layout = new javax.swing.GroupLayout(pnlEstacionamiento3);
         pnlEstacionamiento3.setLayout(pnlEstacionamiento3Layout);
         pnlEstacionamiento3Layout.setHorizontalGroup(
             pnlEstacionamiento3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+            .addGroup(pnlEstacionamiento3Layout.createSequentialGroup()
+                .addGroup(pnlEstacionamiento3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlEstacionamiento3Layout.createSequentialGroup()
+                        .addGap(159, 159, 159)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlEstacionamiento3Layout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(lblEst3)))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
         pnlEstacionamiento3Layout.setVerticalGroup(
             pnlEstacionamiento3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 170, Short.MAX_VALUE)
+            .addGroup(pnlEstacionamiento3Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(lblEst3)
+                .addGap(18, 18, 18)
+                .addGroup(pnlEstacionamiento3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
-        jPanel1.add(pnlEstacionamiento3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 530, 170));
+        jPanel1.add(pnlEstacionamiento3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 530, 170));
 
         javax.swing.GroupLayout pnlEstacionamiento3unoLayout = new javax.swing.GroupLayout(pnlEstacionamiento3uno);
         pnlEstacionamiento3uno.setLayout(pnlEstacionamiento3unoLayout);
@@ -89,62 +199,107 @@ public class EntrarSalir extends javax.swing.JFrame {
         );
         pnlEstacionamiento3unoLayout.setVerticalGroup(
             pnlEstacionamiento3unoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
+            .addGap(0, 60, Short.MAX_VALUE)
         );
 
-        jPanel1.add(pnlEstacionamiento3uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 260, 70));
+        jPanel1.add(pnlEstacionamiento3uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 260, 60));
+
+        lbl400.setFont(new java.awt.Font("Montserrat Thin", 0, 14)); // NOI18N
+        lbl400.setText("Edifico 400");
 
         javax.swing.GroupLayout pnlE400Layout = new javax.swing.GroupLayout(pnlE400);
         pnlE400.setLayout(pnlE400Layout);
         pnlE400Layout.setHorizontalGroup(
             pnlE400Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlE400Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lbl400)
+                .addGap(32, 32, 32))
         );
         pnlE400Layout.setVerticalGroup(
             pnlE400Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 210, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlE400Layout.createSequentialGroup()
+                .addContainerGap(107, Short.MAX_VALUE)
+                .addComponent(lbl400)
+                .addGap(105, 105, 105))
         );
 
-        jPanel1.add(pnlE400, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, -1, 210));
+        jPanel1.add(pnlE400, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 160, 100, 230));
+
+        lbl300.setFont(new java.awt.Font("Montserrat Thin", 0, 14)); // NOI18N
+        lbl300.setText("Edifico 300");
 
         javax.swing.GroupLayout pnlE300Layout = new javax.swing.GroupLayout(pnlE300);
         pnlE300.setLayout(pnlE300Layout);
         pnlE300Layout.setHorizontalGroup(
             pnlE300Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlE300Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lbl300)
+                .addGap(32, 32, 32))
         );
         pnlE300Layout.setVerticalGroup(
             pnlE300Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
+            .addGroup(pnlE300Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(lbl300)
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
-        jPanel1.add(pnlE300, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, -1, 80));
+        jPanel1.add(pnlE300, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, 100, 120));
+
+        lbl200.setFont(new java.awt.Font("Montserrat Thin", 0, 14)); // NOI18N
+        lbl200.setText("Edifico 200");
 
         javax.swing.GroupLayout pnlE200Layout = new javax.swing.GroupLayout(pnlE200);
         pnlE200.setLayout(pnlE200Layout);
         pnlE200Layout.setHorizontalGroup(
             pnlE200Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlE200Layout.createSequentialGroup()
+                .addContainerGap(34, Short.MAX_VALUE)
+                .addComponent(lbl200)
+                .addGap(32, 32, 32))
         );
         pnlE200Layout.setVerticalGroup(
             pnlE200Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
+            .addGroup(pnlE200Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(lbl200)
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
-        jPanel1.add(pnlE200, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, -1, 80));
+        jPanel1.add(pnlE200, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, -1, 120));
+
+        lbl100.setFont(new java.awt.Font("Montserrat Thin", 0, 14)); // NOI18N
+        lbl100.setText("Edifico 100");
 
         javax.swing.GroupLayout pnlE100Layout = new javax.swing.GroupLayout(pnlE100);
         pnlE100.setLayout(pnlE100Layout);
         pnlE100Layout.setHorizontalGroup(
             pnlE100Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(pnlE100Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(lbl100)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         pnlE100Layout.setVerticalGroup(
             pnlE100Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
+            .addGroup(pnlE100Layout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addComponent(lbl100)
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
-        jPanel1.add(pnlE100, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, 80));
+        jPanel1.add(pnlE100, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, -1, 180));
+
+        jLabel4.setFont(new java.awt.Font("Montserrat Thin", 0, 14)); // NOI18N
+        jLabel4.setText("Regresar");
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel4MousePressed(evt);
+            }
+        });
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 20, 60, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -160,9 +315,49 @@ public class EntrarSalir extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void lblEst3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEst3MousePressed
+        // TODO add your handling code here:
+        Estacionamiento3 est = new Estacionamiento3();
+        est.setVisible(true);
+        est.setLocationRelativeTo(null);
+    }//GEN-LAST:event_lblEst3MousePressed
+
+    private void lblEst1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEst1MousePressed
+        // TODO add your handling code here:
+        Estacionamiento1 est = new Estacionamiento1();
+        est.setVisible(true);
+        est.setLocationRelativeTo(null);
+    }//GEN-LAST:event_lblEst1MousePressed
+
+    private void lblEst2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEst2MousePressed
+        // TODO add your handling code here:
+        Estacionamiento2 est = new Estacionamiento2();
+        est.setVisible(true);
+        est.setLocationRelativeTo(null);
+    }//GEN-LAST:event_lblEst2MousePressed
+
+    private void jLabel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MousePressed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jLabel4MousePressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JLabel lbl100;
+    private javax.swing.JLabel lbl200;
+    private javax.swing.JLabel lbl300;
+    private javax.swing.JLabel lbl400;
+    private javax.swing.JLabel lblEst1;
+    private javax.swing.JLabel lblEst2;
+    private javax.swing.JLabel lblEst3;
     private javax.swing.JPanel pnlE100;
     private javax.swing.JPanel pnlE200;
     private javax.swing.JPanel pnlE300;
