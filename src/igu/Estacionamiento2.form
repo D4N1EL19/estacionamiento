@@ -40,13 +40,19 @@
         <Property name="useNullLayout" type="boolean" value="false"/>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="lblAnterior">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Montserrat Thin" size="18" style="0"/>
+              <Font name="Montserrat" size="18" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Anterior"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Cursor de Mano"/>
+            </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblAnteriorMousePressed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="1080" y="20" width="-1" height="-1"/>
@@ -72,22 +78,22 @@
                       <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                       <Component id="lblEntrar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="lblEntrar1" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblSalir" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="115" max="32767" attributes="0"/>
+                      <EmptySpace pref="103" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" min="-2" pref="318" max="-2" attributes="0"/>
+                                  <Component id="txtEspacios" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblCapacidad" min="-2" pref="318" max="-2" attributes="0"/>
                                   <Component id="lblEst1" alignment="0" min="-2" pref="317" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblLogo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -100,14 +106,14 @@
                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                       <Component id="lblEst1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblLogo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblCapacidad" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jTextField1" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace pref="43" max="32767" attributes="0"/>
+                      <Component id="txtEspacios" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace pref="48" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblEntrar1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblSalir" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblEntrar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
@@ -116,30 +122,30 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel2">
+            <Component class="javax.swing.JLabel" name="lblLogo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/persistencia/346339429_9552708478103337_4631547997174124060_n.gif"/>
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel3">
+            <Component class="javax.swing.JLabel" name="lblCapacidad">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Thin" size="40" style="0"/>
+                  <Font name="Montserrat" size="36" style="0"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Capacidad"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField1">
+            <Component class="javax.swing.JTextField" name="txtEspacios">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Thin" size="24" style="0"/>
+                  <Font name="Montserrat" size="24" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="xx de xx esapcios disponibles"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -150,26 +156,32 @@
             <Component class="javax.swing.JLabel" name="lblEntrar">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Thin" size="48" style="0"/>
+                  <Font name="Montserrat" size="48" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Entrar"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Cursor de Mano"/>
+                </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblEntrar1">
+            <Component class="javax.swing.JLabel" name="lblSalir">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Thin" size="48" style="0"/>
+                  <Font name="Montserrat" size="48" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Salir"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Cursor de Mano"/>
+                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblEst1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Montserrat Thin" size="24" style="0"/>
+                  <Font name="Montserrat" size="24" style="0"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Estacionamiento 1"/>
+                <Property name="text" type="java.lang.String" value="Estacionamiento 2"/>
               </Properties>
             </Component>
           </SubComponents>
