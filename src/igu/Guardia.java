@@ -4,15 +4,18 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 import logica.BaseDeDatos;
+import logica.ControlPersonas;
 
 public class Guardia extends javax.swing.JFrame {
     
     BaseDeDatos bd;
+    ControlPersonas control;
     
     public Guardia(BaseDeDatos bd) {
         initComponents();
         pnlEscaneo.setVisible(false);
         this.bd = bd;
+        this.control = new ControlPersonas(bd);
     }
     
     @SuppressWarnings("unchecked")
@@ -20,6 +23,7 @@ public class Guardia extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlBackground = new javax.swing.JPanel();
+        txtInput = new javax.swing.JTextField();
         pnlManual = new javax.swing.JPanel();
         lblManual = new javax.swing.JLabel();
         lblNControl = new javax.swing.JLabel();
@@ -36,13 +40,21 @@ public class Guardia extends javax.swing.JFrame {
         lblLogo = new javax.swing.JLabel();
         lblEscaneo = new javax.swing.JLabel();
         lblSalir = new javax.swing.JLabel();
-        txtInput = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
 
         pnlBackground.setBackground(new java.awt.Color(191, 217, 255));
         pnlBackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtInput.setMinimumSize(new java.awt.Dimension(0, 0));
+        txtInput.setPreferredSize(new java.awt.Dimension(0, 0));
+        txtInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtInputActionPerformed(evt);
+            }
+        });
+        pnlBackground.add(txtInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(641, 499, -1, -1));
 
         pnlManual.setBackground(new java.awt.Color(0, 102, 255));
 
@@ -58,6 +70,11 @@ public class Guardia extends javax.swing.JFrame {
         btnEntrar.setForeground(new java.awt.Color(255, 255, 255));
         btnEntrar.setText("Ingresar");
         btnEntrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnEntrarMousePressed(evt);
+            }
+        });
 
         txtNumeroControl.setBackground(new java.awt.Color(0, 102, 255));
         txtNumeroControl.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
@@ -110,10 +127,20 @@ public class Guardia extends javax.swing.JFrame {
         btnVisitante.setFont(new java.awt.Font("Montserrat", 0, 48)); // NOI18N
         btnVisitante.setText("Visitante");
         btnVisitante.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVisitante.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnVisitanteMousePressed(evt);
+            }
+        });
 
         btnAspirante.setFont(new java.awt.Font("Montserrat", 0, 48)); // NOI18N
         btnAspirante.setText("Aspirante");
         btnAspirante.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAspirante.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnAspiranteMousePressed(evt);
+            }
+        });
 
         btnCerrarSesion.setFont(new java.awt.Font("Montserrat Thin", 0, 24)); // NOI18N
         btnCerrarSesion.setText("Cerrar sesión");
@@ -205,15 +232,6 @@ public class Guardia extends javax.swing.JFrame {
 
         pnlBackground.add(pnlFondoIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 750));
 
-        txtInput.setMinimumSize(new java.awt.Dimension(0, 0));
-        txtInput.setPreferredSize(new java.awt.Dimension(0, 0));
-        txtInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtInputActionPerformed(evt);
-            }
-        });
-        pnlBackground.add(txtInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(641, 499, -1, -1));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -241,7 +259,6 @@ public class Guardia extends javax.swing.JFrame {
         pgsEscaneo.setMaximum(7);
         
         //reaccion por teclado
-        KeyListener entradaTeclado;
         entradaTeclado = new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -262,20 +279,11 @@ public class Guardia extends javax.swing.JFrame {
                 //cuando de enter buscamos al alumno
                 if(e.getKeyChar() == '\n'){
                     //nos traemos el numero ingresado
-                    int codigo = Integer.parseInt(txtInput.getText());
+                    codigo = Integer.valueOf(txtInput.getText());
                     
                     System.out.println(codigo);
                     
-                    //alumno
-                    if(alumno != null){
-                        EntrarSalir pGuardia = new EntrarSalir();
-                        pGuardia.setVisible(true);
-                        pGuardia.setLocationRelativeTo(null);
-                        cerar();
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(null,"Favor de escanear");
-                    }
+                    validadAlumno();
                 }
             }
         };
@@ -289,11 +297,95 @@ public class Guardia extends javax.swing.JFrame {
     }//GEN-LAST:event_lblSalirMousePressed
 
     private void btnCerrarSesionMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarSesionMousePressed
-
+    InicioSesion regreso = new InicioSesion(bd);
+    regreso.setVisible(true);
+    regreso.setLocationRelativeTo(null);
+    this.dispose();
     }//GEN-LAST:event_btnCerrarSesionMousePressed
+
+    private void btnEntrarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMousePressed
+    if(txtNumeroControl.getText().compareTo("") != 0){
+        try {
+            codigo = Integer.valueOf(txtNumeroControl.getText());
+            alumno = control.encontrarAlumno(codigo);
+            
+            if(alumno != null){
+                EntrarSalir pGuardia = new EntrarSalir(alumno,'E',bd);
+                pGuardia.setVisible(true);
+                pGuardia.setLocationRelativeTo(null);
+                cerar();
+            }
+            else{
+                alumno = null;
+                codigo = null;
+                txtNumeroControl.setText("");
+                JOptionPane.showMessageDialog(null,"Alumno no encontrado");
+            }
+        }
+        catch (NumberFormatException e){
+            txtNumeroControl.setText("");
+            JOptionPane.showMessageDialog(null,"Codigo mal ingresado");
+        }
+    }
+    else{
+        JOptionPane.showMessageDialog(null,"Favor de ingresar el campo");
+    }
+    }//GEN-LAST:event_btnEntrarMousePressed
+
+    private void btnVisitanteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVisitanteMousePressed
+        EntrarSalir estacionamiento = new EntrarSalir(null,'V',bd);
+        estacionamiento.setVisible(true);
+        estacionamiento.setLocationRelativeTo(null);
+        cerar();
+    }//GEN-LAST:event_btnVisitanteMousePressed
+
+    private void btnAspiranteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAspiranteMousePressed
+        EntrarSalir estacionamiento = new EntrarSalir(null,'A',bd);
+        estacionamiento.setVisible(true);
+        estacionamiento.setLocationRelativeTo(null);
+        cerar();
+    }//GEN-LAST:event_btnAspiranteMousePressed
+    
     //metodo para cerrar la pantalla
     public void cerar(){
         this.dispose();
+    }
+    
+    //metodo para limpiar progres bar
+    public void limpiarEscaneo(){
+        codigo = null;
+        txtInput.setText("");
+        alumno = null;
+        contN=0;
+        pgsEscaneo.setMaximum(7);
+        pgsEscaneo.setValue(0);
+        pnlEscaneo.setVisible(false);
+    }
+    
+    //metodo para cambiar de frame
+    public void validadAlumno(){
+        //alumno
+        if(codigo != null){
+
+            alumno = control.encontrarAlumno(codigo);
+
+            System.out.println(alumno);
+
+            if(alumno != null){
+                EntrarSalir pGuardia = new EntrarSalir(alumno,'E',bd);
+                pGuardia.setVisible(true);
+                pGuardia.setLocationRelativeTo(null);
+                cerar();
+            }
+            else{
+                limpiarEscaneo();
+                JOptionPane.showMessageDialog(null,"Alumno no encontrado");
+                txtInput.removeKeyListener(entradaTeclado);
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Favor de escanear");
+        }
     }
     
     //contadores
@@ -301,7 +393,8 @@ public class Guardia extends javax.swing.JFrame {
     
     //variables globales
     Integer alumno = null;
-    
+    Integer codigo = null;
+    KeyListener entradaTeclado;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSeparator SeparadorNumero;
     private javax.swing.JLabel btnAspirante;

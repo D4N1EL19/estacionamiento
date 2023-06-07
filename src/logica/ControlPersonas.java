@@ -37,5 +37,19 @@ public class ControlPersonas {
         return tipo;
     }
     
-    
+    public Integer encontrarAlumno(long escaneo){
+        Integer index = null;
+        long aux = 0;
+        
+        for (Estudiante estudiante : bd.estudiantes) {
+            aux = estudiante.numeroControl;
+            
+            if(aux == escaneo){
+                index = estudiante.numeroArreglo;
+                break;
+            }
+        }
+        
+        return index;
+    }
 }
