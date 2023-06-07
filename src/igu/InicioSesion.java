@@ -239,8 +239,10 @@ public class InicioSesion extends javax.swing.JFrame {
                     this.dispose();;
                     break;
                 case 'A':
-                    //pantalla de administrativo
-                    System.out.println(campoUsuario);
+                    Administrador pantallaAdmi = new Administrador(bd);
+                    pantallaAdmi.setVisible(true);
+                    pantallaAdmi.setLocationRelativeTo(null);
+                    this.dispose();
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Correo o contraseña incorrectos");
