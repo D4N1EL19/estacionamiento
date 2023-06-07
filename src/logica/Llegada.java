@@ -1,63 +1,42 @@
 package logica;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 
-/**
- *
- * @author daniel
- */
-
 public final class Llegada {
-    ////////////////////////////////////////////////////////////////////////////
-    ////////////////////////// ATRIBUTOS DE LA CLASE ///////////////////////////
-    ////////////////////////////////////////////////////////////////////////////
+
+    public GregorianCalendar fecha = new GregorianCalendar();
+    public int numeroDeEstudiante=0;
+    public char tipo = '\n';
     
-    Calendar calendario = new GregorianCalendar();
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MMM/yyyy");
-    
-    String fecha = "", hora = "";
-    int numeroPersona = 0;
-    
-    ////////////////////////////////////////////////////////////////////////////
-    ////////////////////////// METODOS CONSTRUCTORES ///////////////////////////
-    ////////////////////////////////////////////////////////////////////////////
-    
-    public Llegada(){
-        //vacio por defecto
+    public Llegada(GregorianCalendar calendario, int numA, char tipo){
+        this.fecha = calendario;
+        this.numeroDeEstudiante = numA;
+        this.tipo = tipo;
     }
-    
-    //para crear personas falsas
-    public Llegada(String fecha, String hora, int num){
+
+    public GregorianCalendar getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(GregorianCalendar fecha) {
         this.fecha = fecha;
-        this.hora = fecha;
-        this.numeroPersona=num;
+    }
+
+    public int getNumeroDeEstudiante() {
+        return numeroDeEstudiante;
+    }
+
+    public void setNumeroDeEstudiante(int numeroDeEstudiante) {
+        this.numeroDeEstudiante = numeroDeEstudiante;
+    }
+
+    public char getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(char tipo) {
+        this.tipo = tipo;
     }
     
-    //para agrefar oficialmente
-    public Llegada(int num){
-        this.fecha = obtenerFecha();
-        
-    }
     
-    ////////////////////////////////////////////////////////////////////////////
-    //////////////////////////// METODOS PARTICULARES //////////////////////////
-    ////////////////////////////////////////////////////////////////////////////
-    
-    //metodo para obtener la hora del sistema
-    public String obtenerFecha(){
-        calendario.setTime(new Date());
-        
-        return sdf.format(calendario.getTime());
-    }
-    
-    //metodo para crear fecha falsa
-    public Calendar fecha(){
-        
-        
-        
-        return calendario;
-    }
 }

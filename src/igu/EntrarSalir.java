@@ -164,21 +164,24 @@ public class EntrarSalir extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEstacionamiento3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEstacionamiento3MousePressed
-        Estacionamiento3 est = new Estacionamiento3();
+        Estacionamiento3 est = new Estacionamiento3(bd,numeroA,tipo);
         est.setVisible(true);
         est.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnEstacionamiento3MousePressed
 
     private void btnEstacionamiento1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEstacionamiento1MousePressed
-        Estacionamiento1 est = new Estacionamiento1();
+        Estacionamiento1 est = new Estacionamiento1(bd,numeroA,tipo);
         est.setVisible(true);
         est.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnEstacionamiento1MousePressed
 
     private void btnEstacionamiento2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEstacionamiento2MousePressed
-        Estacionamiento2 est = new Estacionamiento2();
+        Estacionamiento2 est = new Estacionamiento2(bd,numeroA,tipo);
         est.setVisible(true);
         est.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnEstacionamiento2MousePressed
 
     private void btnRegresarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegresarMousePressed

@@ -7,7 +7,7 @@ public class BaseDeDatos {
     ArrayList<Guardia> guardias = new ArrayList<>();
     ArrayList<Administrativo> administrativos = new ArrayList<>();
     ArrayList<Estudiante> estudiantes = new ArrayList<>();
-    ArrayList<Llegada> llegadas = new ArrayList<>();
+    public ArrayList<Llegada> llegadas = new ArrayList<>();
     ArrayList<Carro> carros = new ArrayList<>();
     
     //contadores de entradas y salidas
