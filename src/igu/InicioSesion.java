@@ -239,7 +239,7 @@ public class InicioSesion extends javax.swing.JFrame {
                     this.dispose();;
                     break;
                 case 'A':
-                    Administrador pantallaAdmi = new Administrador(bd);
+                    Adminis pantallaAdmi = new Adminis(bd);
                     pantallaAdmi.setVisible(true);
                     pantallaAdmi.setLocationRelativeTo(null);
                     this.dispose();

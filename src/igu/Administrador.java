@@ -20,7 +20,34 @@ public class Administrador extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel() {
+            @Override
+            protected void paintComponent(java.awt.Graphics g) {
+                super.paintComponent(g);
+                java.awt.Graphics2D g2d = (java.awt.Graphics2D) g.create();
+
+                // Configura el suavizado para un mejor aspecto
+                g2d.setRenderingHint(java.awt.RenderingHints.KEY_ANTIALIASING, java.awt.RenderingHints.VALUE_ANTIALIAS_ON);
+
+                // Define el radio de los bordes circulares
+                int cornerRadius = 50;
+
+                // Crea un objeto RoundRectangle2D con esquinas redondeadas
+                java.awt.geom.RoundRectangle2D roundedRectangle = new java.awt.geom.RoundRectangle2D.Float(
+                    0, 0, getWidth(), getHeight(), cornerRadius, cornerRadius
+                );
+
+                // Establece la forma circular como área de recorte
+                g2d.setClip(roundedRectangle);
+
+                // Dibuja el fondo del panel
+                g2d.setColor(getBackground());
+                g2d.fillRect(0, 0, getWidth(), getHeight());
+
+                g2d.dispose();
+            }
+        }
+        ;
         lblGraficar = new javax.swing.JLabel();
         lblSalir = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();

@@ -27,7 +27,7 @@ public class BaseDeDatos {
         administrativos.add(new Administrativo("Monia","Ramirez","Martinez",10,3,1991,"Monik19","said19","ad22760501@ite.edu.mx","Codinadora","Sistemas",1));
         
         estudiantes.add(new Estudiante("Juan Perez",0,22760502,0,4,"Electromecanica"));
-        estudiantes.add(new Estudiante("Danna Ramirez",1,22760603,1,5,"Electricidad"));
+        estudiantes.add(new Estudiante("Danna Ramirez",1,22760503,1,5,"Electricidad"));
         estudiantes.add(new Estudiante("Miriam Castillo",2,22760504,3,8,"Ingieneria en Sistemas"));
         estudiantes.add(new Estudiante("Rene Jimenez",3,22760505,4,2,"Mecatronica"));
         estudiantes.add(new Estudiante("Maria Martinez",4,22760506,5,4,"Electonica"));
